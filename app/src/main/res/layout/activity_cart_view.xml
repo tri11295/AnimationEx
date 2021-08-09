@@ -6,51 +6,83 @@
     android:layout_height="match_parent"
     tools:context=".CartViewActivity">
 
+    <Button
+        android:id="@+id/btnDownToUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Down To Up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnUpToDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Up To Down"
+        app:layout_constraintStart_toEndOf="@+id/btnDownToUp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRightToLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Right To Left"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpToDown"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/btnLeftToright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Left To Right"
+        app:layout_constraintStart_toEndOf="@+id/btnRightToLeft"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpToDown" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerProduct"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layoutAnimation="@anim/layout_animation_up_to_down"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_product"
-        app:layout_constraintBottom_toTopOf="@+id/relativeBottom"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLeftToright"
+        app:layout_constraintBottom_toTopOf="@+id/relativeBottom"/>
 
     <RelativeLayout
         android:id="@+id/relativeBottom"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent">
 
         <TextView
-            android:textSize="20sp"
-            android:textColor="@android:color/white"
-            android:layout_marginLeft="64dp"
-            android:layout_centerVertical="true"
-            android:text="Giỏ hàng"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="64dp"
+            android:text="Giỏ hàng"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/imageCartMain"
-            android:layout_centerInParent="true"
-            android:src="@drawable/ic_baseline_shopping_cart_24"
             android:layout_width="58dp"
             android:layout_height="58dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_baseline_shopping_cart_24"
             app:tint="@android:color/white" />
 
     </RelativeLayout>
 
     <ImageView
         android:id="@+id/viewAnimation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

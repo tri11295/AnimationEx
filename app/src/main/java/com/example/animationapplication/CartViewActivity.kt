@@ -2,6 +2,8 @@ package com.example.animationapplication
 
 import android.os.Bundle
 import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.view.animation.LayoutAnimationController
 import androidx.appcompat.app.AppCompatActivity
 import com.example.animationapplication.adapters.ProductAdapter
 import com.example.animationapplication.model.initProductData
@@ -21,6 +23,7 @@ class CartViewActivity : AppCompatActivity() {
 
     private fun initView() {
         productAdapter = ProductAdapter()
+
         recyclerProduct.adapter = productAdapter
         productAdapter.differ.submitList(initProductData())
         productAdapter.setOnItemCartClick {
@@ -37,6 +40,26 @@ class CartViewActivity : AppCompatActivity() {
 
                 }
             })
+        }
+
+        btnDownToUp.setOnClickListener {
+            recyclerProduct.layoutAnimation = AnimationUtils.loadLayoutAnimation(this,R.anim.layout_animation_down_to_up)
+            productAdapter.notifyDataSetChanged()
+        }
+
+        btnUpToDown.setOnClickListener {
+            recyclerProduct.layoutAnimation = AnimationUtils.loadLayoutAnimation(this,R.anim.layout_animation_up_to_down)
+            productAdapter.notifyDataSetChanged()
+        }
+
+        btnLeftToright.setOnClickListener {
+            recyclerProduct.layoutAnimation = AnimationUtils.loadLayoutAnimation(this,R.anim.layout_animation_left_to_right)
+            productAdapter.notifyDataSetChanged()
+        }
+
+        btnRightToLeft.setOnClickListener {
+            recyclerProduct.layoutAnimation = AnimationUtils.loadLayoutAnimation(this,R.anim.layout_animation_right_to_left)
+            productAdapter.notifyDataSetChanged()
         }
     }
 }

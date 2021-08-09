@@ -2,6 +2,8 @@ package com.example.animationapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.AnimationSet
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonScale.setOnClickListener {
-            val animation = AnimationUtils.loadAnimation(this, R.anim.scale)
-            textScale.startAnimation(animation)
+            val animationScale = AnimationUtils.loadAnimation(this, R.anim.scale)
+            textScale.startAnimation(animationScale)
         }
 
         buttonAlpha.setOnClickListener {
@@ -34,6 +36,20 @@ class MainActivity : AppCompatActivity() {
         buttonTranslate.setOnClickListener {
             val animation = AnimationUtils.loadAnimation(this, R.anim.translate)
             textTranslate.startAnimation(animation)
+        }
+
+        buttonSet.setOnClickListener {
+            val animationScale = AnimationUtils.loadAnimation(this, R.anim.scale)
+            val animationAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha)
+            val animationRotate = AnimationUtils.loadAnimation(this, R.anim.rotate)
+
+            val animationSet = AnimationSet(true).apply {
+                interpolator = AccelerateInterpolator()
+                addAnimation(animationScale)
+                addAnimation(animationAlpha)
+                addAnimation(animationRotate)
+            }
+            textSet.startAnimation(animationSet)
         }
 
         buttonCart.setOnClickListener {

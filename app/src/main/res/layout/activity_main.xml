@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
@@ -83,8 +82,6 @@
         android:layout_height="wrap_content"
         android:text="Scale"
         app:layout_constraintBottom_toTopOf="@id/guideline1"
-        app:layout_constraintEnd_toStartOf="@+id/textScale"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -105,8 +102,6 @@
         android:layout_height="wrap_content"
         android:text="Alpha"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/textAlpha"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline1" />
 
@@ -127,8 +122,6 @@
         android:layout_height="wrap_content"
         android:text="Rotate"
         app:layout_constraintBottom_toTopOf="@id/guideline3"
-        app:layout_constraintEnd_toStartOf="@+id/textRotate"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline2" />
 
@@ -168,30 +161,50 @@
         app:layout_constraintTop_toTopOf="@id/guideline3" />
 
     <Button
+        android:id="@+id/buttonSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Animation"
+        app:layout_constraintBottom_toTopOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline4" />
+
+    <TextView
+        android:id="@+id/textSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonSet"
+        app:layout_constraintTop_toBottomOf="@+id/guideline4" />
+
+    <Button
         android:id="@+id/buttonProperty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Property Activity"
-        app:layout_constraintBottom_toTopOf="@id/guideline5"
+        app:layout_constraintBottom_toTopOf="@id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline4" />
+        app:layout_constraintTop_toTopOf="@id/guideline5" />
 
     <Button
         android:id="@+id/buttonDrawable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Drawable Activity"
-        app:layout_constraintBottom_toTopOf="@id/guideline6"
+        app:layout_constraintBottom_toTopOf="@id/guideline7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline5" />
+        app:layout_constraintTop_toTopOf="@id/guideline6" />
 
     <Button
         android:id="@+id/buttonCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cart Activity"
-        app:layout_constraintBottom_toTopOf="@id/guideline7"
+        android:text="Add To Cart Activity"
+        app:layout_constraintBottom_toTopOf="@id/guideline8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline6" />
+        app:layout_constraintTop_toTopOf="@id/guideline7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
